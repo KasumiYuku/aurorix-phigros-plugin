@@ -1,0 +1,5 @@
+# {{title}}
+
+``` alias
+{{aliases}}
+```

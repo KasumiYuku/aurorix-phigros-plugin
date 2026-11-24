@@ -1,0 +1,3 @@
+# {{title}}
+
+{{difficulty}} {{constant}}

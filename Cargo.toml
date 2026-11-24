@@ -1,0 +1,64 @@
+[package]
+name = "aurorix-phigros-plugin"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.89"
+license = "MIT"
+description = "Phigros 查询与渲染插件"
+
+[workspace]
+
+[dependencies]
+aurorix-assets = { path = "../../Aurorix-Rust/crates/aurorix-assets" }
+aurorix-buttons = { path = "../../Aurorix-Rust/crates/aurorix-buttons" }
+aurorix-core = { path = "../../Aurorix-Rust/crates/aurorix-core" }
+aurorix-db = { path = "../../Aurorix-Rust/crates/aurorix-db" }
+aurorix-plugin = { path = "../../Aurorix-Rust/crates/aurorix-plugin" }
+aurorix-render = { path = "../../Aurorix-Rust/crates/aurorix-render" }
+aurorix-template = { path = "../../Aurorix-Rust/crates/aurorix-template" }
+aes = "0.8"
+base64 = "0.22"
+bytes = "1"
+cbc = { version = "0.1", features = ["alloc", "block-padding"] }
+chrono = { version = "0.4", features = ["serde"] }
+futures-util = "0.3"
+hex = "0.4"
+hmac = "0.12"
+md-5 = "0.10"
+rand = "0.8"
+reqwest = { version = "0.12", default-features = false, features = [
+    "json",
+    "rustls-tls",
+    "stream",
+] }
+sha1 = "0.10"
+serde = { version = "1", features = ["derive"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde_json = "1"
+sqlx = { version = "0.8", default-features = false, features = [
+    "runtime-tokio",
+    "postgres",
+    "chrono",
+    "json",
+] }
+thiserror = "2"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+tokio = { version = "1", features = [
+    "rt",
+    "rt-multi-thread",
+    "macros",
+    "sync",
+    "time",
+    "fs",
+    "net",
+    "io-util",
+    "process",
+] }
+
+[profile.dev]
+debug = 0
+strip = "debuginfo"
+
+[profile.test]
+debug = 0
+strip = "debuginfo"

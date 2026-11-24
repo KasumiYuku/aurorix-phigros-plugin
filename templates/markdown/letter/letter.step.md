@@ -1,0 +1,7 @@
+# {{headline}}
+
+> {{opened}}
+
+``` Detail
+{{board}}
+```
